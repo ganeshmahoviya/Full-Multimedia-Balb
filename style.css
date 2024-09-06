@@ -1,0 +1,374 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #222;
+}
+
+body.on{
+    background: radial-gradient(#555, #111);
+}
+body.lal{
+    background: radial-gradient(red,black);
+}
+body.hara{
+    background: radial-gradient(green,black);
+}
+body.santara{
+    background: radial-gradient(orange,black);
+}
+body.nila{
+    background: radial-gradient(blue,black);
+}
+
+.bulb{
+    position: relative;
+    width: 80px;
+    height: 80px;
+    background: #444;
+    border-radius: 50%;
+    z-index: 2;
+}
+.bulb::before
+{
+    content: '';
+    position: absolute;
+    top: -50px;
+    left: 22.5px;
+    width: 35px;
+    height: 80px;
+    background: #444;
+    border-top: 30px solid #000;
+    border-radius: 10px;
+}
+body.on .bulb::after{
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 120px;
+  height: 120px;
+  background: #fff;
+  border-radius: 50%;
+  filter: blur(40px);
+}
+body.lal .bulb::after{
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 120px;
+    height: 120px;
+    background: #c91818;
+    border-radius: 50%;
+    filter: blur(40px);
+}
+body.hara .bulb::after{
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 120px;
+    height: 120px;
+    background: #10bb0d;
+    border-radius: 50%;
+    filter: blur(40px);
+}
+body.santara .bulb::after{
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 120px;
+    height: 120px;
+    background: #8c6200;
+    border-radius: 50%;
+    filter: blur(40px);
+}
+body.santara .bulb::after{
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 120px;
+    height: 120px;
+    background: #8c6200;
+    border-radius: 50%;
+    filter: blur(40px);
+}
+body.nila .bulb::after{
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 120px;
+    height: 120px;
+    background: #245dc7;
+    border-radius: 50%;
+    filter: blur(40px);
+}
+
+
+/* .bulb span:nth-child(1){
+    position: absolute;
+    top: -16px;
+    left: -4px;
+    display: block;
+    width: 30px;
+    height: 30px;
+    background: transparent;
+    transform: rotate(342deg);
+    border-bottom-right-radius: 40px;
+    box-shadow: 20px 20px 0 10px #444;
+} */
+
+/* .bulb span:nth-child(2){
+    position: absolute;
+    top: -16px;
+    right: -4px;
+    display: block;
+    width: 30px;
+    height: 30px;
+    background: transparent;
+    transform: rotate(17deg);
+    border-bottom-left-radius: 40px;
+    box-shadow: -20px 20px 0 10px #444;
+} */
+.wire{
+    position: absolute;
+    left: calc(50% - 2px);
+    bottom: 50%;
+    width: 4px;
+    height: 60vh;
+    background: #000;
+    z-index: 1;
+}
+.switch{
+    position: absolute;
+    bottom: 50px;
+    right: 32%;
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(#eee, #ccc,#eee);
+    border: 3px solid #000;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.switch .btn{
+    position: relative;
+    width: 25px;
+    height: 40px;
+    background: linear-gradient(#777, #fff, #777);
+    border-radius: 6px;
+    border: 2px solid #000;
+    cursor: pointer;
+}
+.switch .btn::before{
+
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 85%;
+    background: linear-gradient(#fff, #fff);
+    border-radius: 4px;
+}
+
+.on .switch .btn::before {
+    top: 15%;  
+}
+#audio{
+    display: none;
+}
+
+
+
+
+
+/* red switch code */
+.color-switch{
+    position: absolute;
+    bottom: 50px;
+    left: 35%;
+    width: 70px;
+    height: 70px;
+    background: red;
+    border: 3px solid #000;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+ .color-switch .red-btn{
+    position: relative;
+    width: 25px;
+    height: 40px;
+    background: linear-gradient(#777, #fff, #777);
+    border-radius: 6px;
+    border: 2px solid #000;
+    cursor: pointer;
+ }
+ .color-switch .red-btn::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 85%;
+    background: linear-gradient(#fff, #fff);
+    border-radius: 4px;
+ }
+
+  .lal .color-switch .red-btn::before{
+    top: 15%;
+ }
+
+ /* hara switch code */
+ .green-switch{
+    position: absolute;
+    bottom: 50px;
+    left: 42%;
+    width: 70px;
+    height: 70px;
+    background: green;
+    border: 3px solid #000;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+ }
+ .green-switch .green-btn{
+    position: relative;
+    width: 25px;
+    height: 40px;
+    background: linear-gradient(#777, #fff, #777);
+    border-radius: 6px;
+    border: 2px solid #000;
+    cursor: pointer;
+ }
+ .green-switch .green-btn::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 85%;
+    background: linear-gradient(#fff, #fff);
+    border-radius: 4px;
+ }
+  .hara .green-switch .green-btn::before{
+    top: 15%;
+ }
+
+ /* orange color switch code */
+
+ .orange-switch{
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    width: 70px;
+    height: 70px;
+    background: orange;
+    border: 3px solid #000;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+ }
+ .orange-switch .orange-btn{
+    position: relative;
+    width: 25px;
+    height: 40px;
+    background: linear-gradient(#777, #fff, #777);
+    border-radius: 6px;
+    border: 2px solid #000;
+    cursor: pointer;
+ }
+ .orange-switch .orange-btn::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 85%;
+    background: linear-gradient(#fff, #fff);
+    border-radius: 4px;
+ }
+ .santara .orange-switch .orange-btn::before{
+    top: 15%;
+ }
+
+ /* blue color switch code */
+
+ .blue-switch{
+    position: absolute;
+    bottom: 50px;
+    left: 57%;
+    width: 70px;
+    height: 70px;
+    background: blue;
+    border: 3px solid #000;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+ }
+ .blue-switch .blue-btn{
+    position: relative;
+    width: 25px;
+    height: 40px;
+    background: linear-gradient(#777, #fff, #777);
+    border-radius: 6px;
+    border: 2px solid #000;
+    cursor: pointer;
+ }
+ .blue-switch .blue-btn::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 85%;
+    background: linear-gradient(#fff, #fff);
+    border-radius: 4px;
+ }
+  .nila .blue-switch .blue-btn::before{
+    top: 15%;
+ }
+
+ @media (max-width : 600px) {
+    .color-switch{
+        left: 12%;
+    }
+    .green-switch{
+        left: 28%;
+    }
+    .orange-switch{
+        left: 44%;
+    }
+    .blue-switch{
+        left: 60%;
+    }
+    .switch{
+        right: 10%;
+    }
+
+
+    
+ }
